@@ -37,7 +37,7 @@ namespace FlashcardsAPI.Controllers
             _context.Flashcards.Add(c);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("Post Flashcard", new { id = c.Id }, c);
+            return CreatedAtAction("PostFlashcard", new { id = c.Id }, c);
         }
 
         //delete flashcard
