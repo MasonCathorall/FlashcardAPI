@@ -21,7 +21,7 @@ var FlashcardAPI = "_FlashcardsAPI";
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: FlashcardAPI,
+    options.AddDefaultPolicy(
         policy =>
         {
             policy.WithOrigins("http://localhost:4200", "https://flashcard-api-website.azurewebsites.net")
@@ -44,7 +44,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.UseCors(FlashcardAPI);
+app.UseCors();
 
 app.UseHttpsRedirection();
 
