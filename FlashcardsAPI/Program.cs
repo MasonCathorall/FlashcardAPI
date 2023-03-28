@@ -24,7 +24,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: FlashcardAPI,
         policy =>
         {
-            policy.WithOrigins("http://localhost:4200")
+            policy.WithOrigins("http://localhost:4200", "https://flashcard-api-website.azurewebsites.net")
                    .AllowAnyMethod()
                    .AllowAnyHeader()
                    .AllowCredentials();
