@@ -53,7 +53,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Build with dotnet
-        run: dotnet build ./FlashcardAPI/FlashcardsAPI --configuration Release
+        run: dotnet build ./FlashcardsAPI --configuration Release
         
       - name: App Settings Variable Substitution
         uses: microsoft/variable-substitution@v1
@@ -64,7 +64,7 @@ jobs:
     
 
       - name: dotnet publish
-        run: dotnet publish ./FlashcardAPI/FlashcardsAPI -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ./FlashcardsAPI -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
